@@ -1,0 +1,40 @@
+ {>layout/}
+{<content}
+ <div class='container' id='content'>
+		<h2>Order Confirmation</h2>
+		<form accept-charset="UTF-8" action="/order"
+			class="simple_form form-horizontal new_order" id="order"
+			method="GET" novalidate="novalidate">
+			<div class='control-group'>
+				<label class="string optional control-label" for="order_amount">Amount</label>
+				<div class='controls'>
+					<label class='checkbox'> {amount} {#orders}{.}<br>{/orders} </label> <input id="order_amount"
+						name="order_amount" type="hidden" value='{amount}'/>
+				</div>
+			</div>
+			<div class='control-group'>
+				<label class="string optional control-label" for="order_description">Description</label>
+				<div class='controls'>
+					<label class='checkbox'> {desc} </label> <input
+						id="order_description" name="order_description" type="hidden"
+						value='{desc}' />
+				</div>
+			</div>
+			<div class="control-group select optional">
+				<label class="select optional control-label"
+					for="order_payment_method">Payment method</label>
+				<div class="controls">
+					<select class="select optional" id="order_payment_method"
+						name="order_payment_method">
+                        {#credit_card}                            
+                            <option value="credit_card">Credit Card</option>
+                        {/credit_card}
+						<option value="paypal">PayPal</option>
+					</select>
+				</div>
+			</div>
+			<div class='form-actions'>
+				<input class="btn btn btn-primary" name="commit" type="submit"
+					value="Place Order" />
+			</div>
+{/content}

@@ -1,0 +1,35 @@
+{>layout/}
+{<content}
+	<div class='container' id='content'>		
+		{#message}
+		<div class="alert fade in alert-{type}">
+			<button class="close" data-dismiss="alert">&times;</button>
+			{desc}
+		</div>
+		{/message}
+		<h2>Sign in</h2>
+		<p>Sign in with your PizzaShop account. Don't have an account yet? <a href="signup">Sign up</a> for one.</p>
+			<form accept-charset="UTF-8" action="login"
+			class="simple_form form-horizontal new_user" id="new_user"
+			method="post" novalidate="novalidate">			
+			<div class="control-group email optional">
+				<label class="email optional control-label" for="user_email">Email</label>
+				<div class="controls">
+					<input autofocus="autofocus" class="string email optional"
+						id="user_email" name="user[email]" size="50" type="email" value="" placeholder="dummy@email.com"/>
+				</div>
+			</div>
+			<div class="control-group password optional">
+				<label class="password optional control-label" for="user_password">Password</label>
+				<div class="controls">
+					<input class="password optional" id="user_password"
+						name="user[password]" size="50" type="password" />
+				</div>
+			</div>			
+			<div class='form-actions'>
+				<input class="btn btn btn-primary" name="commit" type="submit"
+					value="Sign in" />
+			</div>
+		</form>
+	</div>
+{/content}
